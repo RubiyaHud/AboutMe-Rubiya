@@ -1,14 +1,16 @@
-
+import RootLayout from './components/layouts/RootLayout'
+import { Routes, Route } from 'react-router-dom'
 import './App.css'
+import Home from './components/layouts/Home'
+import Header from './components/layouts/Header'
 
 function App() {
 
 
   return (
     <>
-      <h1 class="bg-amber-100 text-3xl font-bold underline">
-        Hello world!
-      </h1>
+      <Header />
+      <Home />
     </>
   )
 }

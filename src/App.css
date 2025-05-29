@@ -1,1 +1,10 @@
 @import "tailwindcss";
+
+@theme {
+    --color-primaryBlack: #020617; 
+    --color-secondaryBlack: #111827; 
+    --color-primaryFont: #EAB308; 
+    
+    --radius-10: 10px;     
+    --font-lexendDeca: "Lexend Deca", "serif";
+  }
