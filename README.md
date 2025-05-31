@@ -1,12 +1,69 @@
-# React + Vite
+## React icons
+1. Go to the Link below:
+   [React Icons](https://react-icons.github.io/react-icons/)
+2. Open terminal ` ctrl + ` `tilda or back tick ` in VS Code and type the code below:
+   ```
+   npm install react-icons --save
+   ```
+3. Select icon and import the icon component where needed, for example:
+   ```
+   import { FaBeer } from 'react-icons/fa';
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+   class Question extends React.Component {
+     render() {
+          return <h3> Lets go for a <FaBeer />? </h3>
+     }
+   }
+   ```
+## Rotating Circle
+A simple `React` component with animated rotating `<div>` elements using [Framer Motion](https://motion.dev/docs/react-motion-component), a powerful animation library for React.
+1. ### Installation:
+   ```
+   npm install framer-motion
+   ```
+2. ### React Component: Divs Rotating in a Circle
+   
+   ```
+   import React from "react";
+   import { motion } from "framer-motion";
 
-Currently, two official plugins are available:
+   const RotatingCircle = () => {
+     const numDivs = 6; // Number of orbiting divs
+     const radius = 100; // Distance from the center
+     const divs = Array.from({ length: numDivs });
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+     return (
+               <div className="flex justify-center items-center h-screen bg-gray-100">
+                  <motion.div
+                     className="relative w-[300px] h-[300px]"
+                    animate={{ rotate: 360 }}
+                    transition={{ repeat: Infinity, duration: 10, ease: "linear", }}
+                   >
+                       {divs.map((_, i) => {
+                            const angle = (360 / numDivs) * i;
+                            const x = radius * Math.cos((angle * Math.PI) / 180);
+                            const y = radius * Math.sin((angle * Math.PI) / 180);
+            
+                           return (
+                              <div  key={i}
+                                   className="w-10 h-10 bg-blue-500 rounded-full absolute"
+                                   style={{  top: `calc(50% + ${y}px - 20px)`,
+                                             left: `calc(50% + ${x}px - 20px)`,
+                                   }}
+                             />
+                          );
+                     })}
+               </motion.div>
+           </div>
+     );
+   };
 
-## Expanding the ESLint configuration
+   export default RotatingCircle;
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+   ```
+3. ### Optional:
+   We can add a central “sun” `div` inside the `motion.div` if we would like a visible center:
+   ```
+   <div className="w-6 h-6 bg-yellow-400 rounded-full absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2" />
+
+   ```
