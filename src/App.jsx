@@ -1,8 +1,15 @@
-import RootLayout from './components/layouts/RootLayout'
-import { Routes, Route } from 'react-router-dom'
+
 import './App.css'
-import Home from './components/layouts/Home'
 import Header from './components/layouts/Header'
+import HomeLayout from './components/layouts/HomeLayout ';
+import MyProjectsLayout from './components/layouts/MyProjectsLayout';
+import CareerObjLayout from './components/layouts/CareerObjLayout';
+import EducationLayout from './components/layouts/EducationLayout';
+import ExperiencesLayout from './components/layouts/ExperiencesLayout';
+import SkillLayout from './components/layouts/SkillLayout';
+import MyWritingsLayout from './components/layouts/MyWritingsLayout';
+import ContactLayout from './components/layouts/ContactLayout';
+
 
 function App() {
 
@@ -10,7 +17,14 @@ function App() {
   return (
     <>
       <Header />
-      <Home />
+      <HomeLayout id="home" />
+      <CareerObjLayout id="careerObjective" />
+      <EducationLayout id="education" />
+      <ExperiencesLayout id="experience" />
+      <SkillLayout id="skills" />      
+      <MyProjectsLayout id="myProjects" />
+      <MyWritingsLayout id="myWritings" />
+      <ContactLayout id="contact" />
     </>
   )
 }

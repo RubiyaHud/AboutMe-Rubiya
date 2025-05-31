@@ -1,0 +1,42 @@
+/* All Common CSS Start */
+* {
+
+     font-family: "Lexend Deca", sans-serif;
+
+}
+
+#parallelogram {
+     width: 427px;
+     height: 400px;
+     transform: skewY(-10deg);
+     background: #FFD44B;
+     z-index: 10;
+     position: absolute;
+     left: 60px;
+     top: 0;
+}
+
+#parallelogram2 {
+     width: 427px;
+     height: 400px;
+     transform: skewY(-10deg);
+     background: #D7B71C;
+     position: absolute;
+     z-index: 2;
+     top: 15px;
+     left: 80px;
+}
+
+#circle {
+     width: 380px;
+     height: 380px;
+     /* background: gray; */
+     background: url(../src/assets/RubiyaImgCircle.png);
+     border-radius: 50%;
+     position: absolute;
+     z-index: 12;
+     top:10px;
+     left: 65%;
+     transform: translateX(-50%);
+
+}

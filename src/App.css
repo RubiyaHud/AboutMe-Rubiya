@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@plugin "daisyui";
 
 @theme {
     --color-primaryBlack: #020617; 
@@ -6,5 +7,5 @@
     --color-primaryFont: #EAB308; 
     
     --radius-10: 10px;     
-    --font-lexendDeca: "Lexend Deca", "serif";
+    /* --font-lexendDeca: "Lexend Deca", "sans-serif"; */
   }
