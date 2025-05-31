@@ -58,9 +58,12 @@ A simple `React` component with animated rotating `<div>` elements using [Framer
      );
    };
 
-export default RotatingCircle;
+   export default RotatingCircle;
 
    ```
 3. ### Optional:
+   We can add a central “sun” `div` inside the `motion.div` if we would like a visible center:
+   ```
+   <div className="w-6 h-6 bg-yellow-400 rounded-full absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2" />
 
-You can add a central “sun” div inside the motion.div if you'd like a visible center:
+   ```
