@@ -22,47 +22,41 @@ A simple `React` component with animated rotating `<div>` elements using [Framer
    npm install framer-motion
    ```
 2. ### React Component: Divs Rotating in a Circle
+   
    ```
    import React from "react";
    import { motion } from "framer-motion";
 
-  const RotatingCircle = () => {
-  const numDivs = 6; // Number of orbiting divs
-  const radius = 100; // Distance from the center
+   const RotatingCircle = () => {
+     const numDivs = 6; // Number of orbiting divs
+     const radius = 100; // Distance from the center
+     const divs = Array.from({ length: numDivs });
 
-  const divs = Array.from({ length: numDivs });
-
-  return (
-    <div className="flex justify-center items-center h-screen bg-gray-100">
-      <motion.div
-        className="relative w-[300px] h-[300px]"
-        animate={{ rotate: 360 }}
-        transition={{
-          repeat: Infinity,
-          duration: 10,
-          ease: "linear",
-        }}
-      >
-        {divs.map((_, i) => {
-          const angle = (360 / numDivs) * i;
-          const x = radius * Math.cos((angle * Math.PI) / 180);
-          const y = radius * Math.sin((angle * Math.PI) / 180);
-
-          return (
-            <div
-              key={i}
-              className="w-10 h-10 bg-blue-500 rounded-full absolute"
-              style={{
-                top: `calc(50% + ${y}px - 20px)`,
-                left: `calc(50% + ${x}px - 20px)`,
-              }}
-            />
-          );
-        })}
-      </motion.div>
-    </div>
-  );
-};
+     return (
+               <div className="flex justify-center items-center h-screen bg-gray-100">
+                  <motion.div
+                     className="relative w-[300px] h-[300px]"
+                    animate={{ rotate: 360 }}
+                    transition={{ repeat: Infinity, duration: 10, ease: "linear", }}
+                   >
+                       {divs.map((_, i) => {
+                            const angle = (360 / numDivs) * i;
+                            const x = radius * Math.cos((angle * Math.PI) / 180);
+                            const y = radius * Math.sin((angle * Math.PI) / 180);
+            
+                           return (
+                              <div  key={i}
+                                   className="w-10 h-10 bg-blue-500 rounded-full absolute"
+                                   style={{  top: `calc(50% + ${y}px - 20px)`,
+                                             left: `calc(50% + ${x}px - 20px)`,
+                                   }}
+                             />
+                          );
+                     })}
+               </motion.div>
+           </div>
+     );
+   };
 
 export default RotatingCircle;
 
