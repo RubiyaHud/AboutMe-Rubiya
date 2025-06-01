@@ -4,8 +4,11 @@
 @theme {
     --color-primaryBlack: #020617; 
     --color-secondaryBlack: #111827; 
+    --color-tertiaryBlack: oklch(27.8% 0.033 256.848); 
     --color-primaryFont: #EAB308; 
     
     --radius-10: 10px;     
-    /* --font-lexendDeca: "Lexend Deca", "sans-serif"; */
+    --font-lexendDeca: "Lexend Deca", "sans-serif";
+    --font-arvo:  "Arvo", "serif";
+    
   }
