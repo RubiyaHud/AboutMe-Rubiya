@@ -36,7 +36,7 @@ const HomeLayout = ({ id }) => {
               <div id='parallelogram2'></div>
               {/* <div id='circle'></div> */}
               <div className='h-[380px] w-[380px] bg-white rounded-full absolute z-12 top-2.5 left-[65%] translate-x-[-50%]'>
-                <Image imgSrc={rubiyaImgCircle} imgAlt={'rubiyaImgCircle'}/>
+                {/* <Image imgSrc={rubiyaImgCircle} imgAlt={'rubiyaImgCircle'}/> */}
               </div>
             </div>
 
